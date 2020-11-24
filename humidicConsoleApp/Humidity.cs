@@ -11,6 +11,11 @@ namespace humidicConsoleApp
       public  DateTime Date { get; set; }
 
         public Humidity() { }
+        public Humidity( DateTime date)
+        {
+            Date = date;
+        }
+
         public Humidity( float level, DateTime date)
         {
             
