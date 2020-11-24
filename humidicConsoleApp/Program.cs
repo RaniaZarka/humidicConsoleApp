@@ -12,23 +12,19 @@ namespace humidicConsoleApp
         private const int Port = 12345;
         static void Main(string[] args)
         {
-            User u = new User();
+            //User u = new User();
             DateTime time = DateTime.Now;
 
-            if (u.UpdateInterval == 15) // this if we use the user update interval 
+            if (time.Minute == 15) 
             {
                 DoIt();
                 Thread.Sleep(60 * 15 * 1000);
             }
-            else if (time.Minute == 30) // this if we are going to use the time 
+          
+            else 
             {
                 DoIt();
-                Thread.Sleep(60 * 30 * 1000);
-            }
-            else if( time.Minute== 60)
-            {
-                DoIt();
-                Thread.Sleep(60 * 60 * 1000);
+                Thread.Sleep(60 * 1 * 1000);
             }
             
             
