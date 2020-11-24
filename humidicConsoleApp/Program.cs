@@ -7,6 +7,7 @@ using System.Net.Sockets;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Transactions;
 
 namespace humidicConsoleApp
 {
@@ -22,13 +23,15 @@ namespace humidicConsoleApp
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(media);
 
+            var a = 13; 
             DateTime time = DateTime.Now;
             try
             {
                 var humidity = new Humidity();
                 var message = string.Empty;
+                var currentMinute = time.Minute;
 
-                if (time.Minute = 00 || 15 || 30 || 45)
+                if (currentMinute %15 == 0)
                 {
                     message = AddHumidityLevel(humidity);
                 }
@@ -38,7 +41,7 @@ namespace humidicConsoleApp
             {
                 Console.WriteLine(e);
             }
-            //User u = new User();
+            
 
             using (UdpClient socket = new UdpClient(new IPEndPoint(IPAddress.Any, Port)))
             {
