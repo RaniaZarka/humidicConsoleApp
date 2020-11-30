@@ -11,13 +11,13 @@ namespace humidicConsoleApp
        public string Name { get; set; }
        public int HighLevel { get; set; }
        public int LowLevel { get; set; }
-        public int UpdateInterval { get; set; }
-        public string Alert { get; set; }
-        public User()
+       public int UpdateInterval { get; set; }
+       public string Alert { get; set; }
+       public User()
         {
 
         }
-        public User(int id, string name, int highLevel, int lowLevel, int updateInterval, string alert)
+       public User(int id, string name, int highLevel, int lowLevel, int updateInterval, string alert)
         {
             Id = id;
             Name = name;
