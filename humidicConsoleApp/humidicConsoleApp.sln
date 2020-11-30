@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30011.22
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "humidicConsoleApp", "humidicConsoleApp.csproj", "{8B73CC6C-BB17-4B32-AAE3-586E187F766C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "humidicConsoleApp", "humidicConsoleApp.csproj", "{8B73CC6C-BB17-4B32-AAE3-586E187F766C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HumidicUnitTest", "..\HumidicUnitTest\HumidicUnitTest.csproj", "{BBB405B1-1953-4D27-90CC-0D05D1864408}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{8B73CC6C-BB17-4B32-AAE3-586E187F766C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8B73CC6C-BB17-4B32-AAE3-586E187F766C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8B73CC6C-BB17-4B32-AAE3-586E187F766C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BBB405B1-1953-4D27-90CC-0D05D1864408}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BBB405B1-1953-4D27-90CC-0D05D1864408}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BBB405B1-1953-4D27-90CC-0D05D1864408}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BBB405B1-1953-4D27-90CC-0D05D1864408}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
