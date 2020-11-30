@@ -29,7 +29,7 @@ namespace humidicConsoleApp
                     Console.WriteLine("Receives {0} bytes from {1} port {2} message {3}", datagramReceived.Length,
                                         remoteEndPoint.Address, remoteEndPoint.Port, message);
                     //Parse(message);
-                    Thread.Sleep(60 * 15 * 1000);
+                    //Thread.Sleep(60 * 15 * 1000);
                 }
             }
 
