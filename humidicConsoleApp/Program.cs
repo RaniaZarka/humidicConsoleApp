@@ -30,23 +30,7 @@ namespace humidicConsoleApp
             // we added the new headers that we defined  
             client.DefaultRequestHeaders.Accept.Add(media);
 
-            DateTime time = DateTime.Now;
-            try
-            {
-                var humidity = new Humidity(time);
-                int currentMinute = time.Minute;
-
-
-                if (currentMinute % 15 == 0)
-                {
-                    AddHumidityLevel(humidity);
-                }
-
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e);
-            }
+            DateTime time;
             //User u = new User();
 
 
@@ -65,8 +49,30 @@ namespace humidicConsoleApp
                     string message = Encoding.ASCII.GetString(datagramReceived, 0, datagramReceived.Length);
                     Console.WriteLine("Receives {0} bytes from {1} port {2} message {3}", datagramReceived.Length,
                                         remoteEndPoint.Address, remoteEndPoint.Port, message);
+
+                    time = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, DateTime.Now.Hour, DateTime.Now.Minute, DateTime.Now.Second);
+                    try
+                    {
+                        var humidity = new Humidity(time);
+                        humidity.Level = Convert.ToInt32(message);
+                        //humidity.Level = 85;
+                        int currentMinute = time.Minute;
+                        Console.WriteLine(time.Hour);
+
+
+                        if (currentMinute % 1 == 0)
+                        {
+                            Console.WriteLine(AddHumidityLevel(humidity));
+                            Thread.Sleep(60 * 1 * 1000);
+                        }
+
+                    }
+                    catch (Exception e)
+                    {
+                        Console.WriteLine(e);
+                    }
                     //Parse(message);
-                    //Thread.Sleep(60 * 15 * 1000);
+                    //
                 }
             }
 
@@ -74,7 +80,7 @@ namespace humidicConsoleApp
 
         private static string AddHumidityLevel(Humidity humidity)
         {
-            var action = "api/Humidity/Post";
+            var action = "api/Humidity/";
             var request = client.PostAsJsonAsync(action, humidity);
 
             var response = request.Result.Content.ReadAsStringAsync();

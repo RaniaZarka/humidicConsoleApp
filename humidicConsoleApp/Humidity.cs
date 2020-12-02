@@ -7,7 +7,7 @@ namespace humidicConsoleApp
    public  class Humidity
     {
     
-      public float Level { get; set; }
+      public int Level { get; set; }
       public  DateTime Date { get; set; }
 
         public Humidity()
@@ -19,7 +19,7 @@ namespace humidicConsoleApp
             Date = date;
         }
         
-        public Humidity( float level, DateTime date)
+        public Humidity(int level, DateTime date)
         {
             
             Level = level;
