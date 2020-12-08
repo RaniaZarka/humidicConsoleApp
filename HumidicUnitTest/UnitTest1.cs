@@ -13,7 +13,7 @@ namespace HumidicUnitTest
             //Arrange
             Humidity h = new Humidity();
 
-            float Level = 50;
+            int Level = 50;
 
             //Act
 
