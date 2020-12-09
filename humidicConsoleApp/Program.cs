@@ -63,7 +63,7 @@ namespace humidicConsoleApp
                         if (currentMinute % 1 == 0)
                         {
                             Console.WriteLine(AddHumidityLevel(humidity));
-                            Thread.Sleep(60 * 1 * 1000);
+                            Thread.Sleep(60 * 15 * 1000);
                         }
 
                     }
