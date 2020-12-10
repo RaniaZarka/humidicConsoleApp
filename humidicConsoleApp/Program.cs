@@ -31,7 +31,7 @@ namespace humidicConsoleApp
             client.DefaultRequestHeaders.Accept.Add(media);
 
             DateTime time;
-            //User u = new User();
+           
 
 
             using (UdpClient socket = new UdpClient(new IPEndPoint(IPAddress.Any, Port)))
@@ -39,9 +39,9 @@ namespace humidicConsoleApp
                 IPEndPoint remoteEndPoint = new IPEndPoint(0, 0);
 
 
-                //Thread.Sleep(2000);
+               
                 while (true)
-                {    //if (datetime.now().minute == (0 or 15 or 30 or 45))
+                {    
 
                     Console.WriteLine("Waiting for broadcast {0}", socket.Client.LocalEndPoint);
                     byte[] datagramReceived = socket.Receive(ref remoteEndPoint);
@@ -55,12 +55,12 @@ namespace humidicConsoleApp
                     {
                         var humidity = new Humidity(time);
                         humidity.Level = Convert.ToInt32(message);
-                        //humidity.Level = 85;
+                       
                         int currentMinute = time.Minute;
                         Console.WriteLine(time.Hour);
 
 
-                        if (currentMinute % 1 == 0)
+                        if (currentMinute % 15 == 0)
                         {
                             Console.WriteLine(AddHumidityLevel(humidity));
                             Thread.Sleep(60 * 15 * 1000);
@@ -71,8 +71,7 @@ namespace humidicConsoleApp
                     {
                         Console.WriteLine(e);
                     }
-                    //Parse(message);
-                    //
+                   
                 }
             }
 
